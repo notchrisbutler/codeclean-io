@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>CodeClean.io - Data Visualization and Formatting Tool</title>
+    <meta name="keywords" content="JSON,XML,CSV,YAML,SVG,data formatter,data visualizer,code formatter,syntax highlighting,tree view,online tool,free"/>
+    <meta name="description" content="Convert and visualize JSON, XML, CSV, YAML, SVG and other data formats with syntax highlighting and tree view. 100% local processing - no data sent to servers."/>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'/%3E%3C/svg%3E" id="favicon"/>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Analytics -->
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    
+    <!-- Core Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/#new" class="logo">CodeClean.io</a>
+        <div class="tagline">Data Visualization & Formatting Tool</div>
+    </header>
+    
+    <main>
+        <textarea id="json-input" placeholder="🚀 Welcome to CodeClean.io!
+
+Paste your data here and watch it transform:
+• JSON - Parse and visualize with syntax highlighting
+• XML - Convert to structured JSON format  
+• CSV - Render as beautiful HTML tables
+• YAML - Parse to JSON structure
+• SVG - Render images directly with sanitization
+• URLs - Break down into components
+• Base64 - Decode encoded strings
+• Hex/Binary - Convert to readable text
+• INI files - Parse configuration files
+
+✨ Features:
+• 100% local processing - your data never leaves your browser
+• Auto-save to localStorage
+• Share via URL (data stored privately in hash)
+• Drag & drop files (up to 1MB)
+• Mobile responsive design
+• Dark theme optimized for developers
+
+🔒 Privacy First: All processing happens locally in your browser. No data is sent to our servers.
+
+Try pasting some JSON, XML, or CSV data to get started!">{"welcome":"CodeClean.io","features":["JSON parsing & visualization","XML to JSON conversion","CSV to HTML tables","YAML parsing","SVG rendering","URL parsing","Base64/Hex/Binary decoding","100% local processing","Auto-save functionality","Privacy-first design"],"demo":{"users":[{"id":1,"name":"Alex Developer","role":"Frontend","skills":["React","TypeScript","CSS"],"active":true},{"id":2,"name":"Sam Designer","role":"UI/UX","skills":["Figma","Sketch","Prototyping"],"active":true}],"stats":{"totalUsers":2,"activeUsers":2,"lastUpdated":"2024-01-15T10:30:00Z"}}}</textarea>
+        <div id="resizer"></div>
+        <div id="json-view" contenteditable></div>
+    </main>
+    
+    <footer>
+        <div>
+            <strong>CodeClean.io</strong> — 
+            <a href="https://chrisbutler.dev">Contact</a> • 
+            <a href="https://github.com/notchrisbutler/codeclean-io" target="_blank">GitHub</a>
+        </div>
+        <div id="footer-stats"></div>
+    </footer>
+
+    <!-- Application Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/parsers.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
