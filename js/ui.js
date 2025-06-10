@@ -10,7 +10,7 @@
  * @param {number} depth - Current nesting depth
  */
 function createJsonView(json, parent, depth = 0) {
-    const indent = "&nbsp;".repeat(depth * 4);
+    const indent = "&nbsp;".repeat(depth * 2);
     const keys = Object.keys(json);
 
     keys.forEach((key, index) => {
@@ -29,11 +29,15 @@ function createJsonView(json, parent, depth = 0) {
             const toggle = $("<span class='toggle'></span>");
             const isNumericKey = !isNaN(parseFloat(key)) && isFinite(key);
             
+            // Replace initial indent with toggle + spacing for proper positioning
+            element.html('');
+            element.append(toggle);
+            element.append(indent);
+            
             if (!isNumericKey) {
                 element.append(`<span class='key'>"${key}"</span>: `);
             }
             
-            element.append(toggle);
             element.append(Array.isArray(value) ? "[" : "{");
             
             // Add item count for arrays and objects
@@ -50,7 +54,7 @@ function createJsonView(json, parent, depth = 0) {
             createJsonView(value, children, depth + 1);
             element.append(children);
             
-            const closeIndent = "&nbsp;".repeat(depth * 4);
+            const closeIndent = "&nbsp;".repeat(depth * 2);
             const closeElement = $(`<div>${closeIndent}${Array.isArray(value) ? "]" : "}"}</div>`);
             if (!isLast) closeElement.append(",");
             element.append(closeElement);
